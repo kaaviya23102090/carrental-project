@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .search-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        .search-container h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .search-container label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .search-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 1em;
+            color: green;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1>Search Rental Cars</h1>
+        <form id="search-form">
+            <label for="pickup-location">Pick-Up Location:</label>
+            <input type="text" id="pickup-location" placeholder="Enter pick-up location" required>
+
+            <label for="return-location">Return Location:</label>
+            <input type="text" id="return-location" placeholder="Enter return location" required>
+
+            <label for="pickup-date">Pick-Up Date:</label>
+            <input type="date" id="pickup-date" required>
+
+            <label for="return-date">Return Date:</label>
+            <input type="date" id="return-date" required>
+
+            <button type="submit">Search</button>
+        </form>
+        <p class="result" id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById('search-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting
+
+            // Get form values
+            const pickupLocation = document.getElementById('pickup-location').value;
+            const returnLocation = document.getElementById('return-location').value;
+            const pickupDate = document.getElementById('pickup-date').value;
+            const return

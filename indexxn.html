@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Newspaper Agency Profit Calculator</title>
+</head>
+<body>
+  <h2>Newspaper Agency Profit Calculator</h2>
+  <label for="copiesSold">Enter number of copies sold:</label>
+  <input type="number" id="copiesSold" min="0">
+  <button onclick="calculateProfit()">Calculate Profit</button>
+  <p id="result"></p>
+  <script>
+    function calculateProfit() {
+      const sellingPrice = 12;
+      const costPrice = 5;
+      const fixedCost = 100;
+      const w = parseInt(document.getElementById("copiesSold").value);
+      const totalRevenue = w * sellingPrice;
+      const totalCost = (w * costPrice) + fixedCost;
+      const profit = totalRevenue - totalCost;
+      document.getElementById("result").innerHTML = `Profit on Sunday: Rs. ${profit}`;
+    }
+  </script>
+</body>
